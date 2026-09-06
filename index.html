@@ -66,6 +66,7 @@
 
     <div class="row">
       <button id="newSession">Nuova sessione</button>
+      <button id="clearLog" class="secondary">Svuota cronologia</button>
     </div>
 
     <ul id="log"></ul>
@@ -144,6 +145,11 @@ function handleIncomingUrl(url) {
 }
 
 document.getElementById('newSession').addEventListener('click', startSession);
+
+document.getElementById('clearLog').addEventListener('click', () => {
+  document.getElementById('log').innerHTML = '';
+  document.getElementById('incoming').style.display = 'none';
+});
 
 startSession();
 </script>
